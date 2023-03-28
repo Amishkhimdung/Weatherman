@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins";
+    color: white;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(110deg, #1D2791, #391E94, #561496, #720B98, #8312A5, #8312A5);
+}
+
+.weather-box {
+    margin: 10em 35em;
+    padding: 40px 50px;
+    border: 8px solid transparent;
+    border-radius: 10px;
+    background: rgba(53, 53, 53, 0.47);
+    backdrop-filter: blur(62px);
+}
+
+.weather-box h1 {
+    text-align: center;
+    font-size: 48px;
+    padding-bottom: 40px;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    padding: 15px 150px;
+    border-radius: 40px;
+    font-size: 22px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    color: black;
+
+}
+
+.search button {
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    background: #655769;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.search button img {
+    height: 50px;
+    width: 50px;
+}
+.card{
+    text-align: center;
+}
+.card .place{
+    padding: 20px;
+    justify-content: space-between;
+}
+.info{
+    display: block;
+}
+.card .info p{
+    font-size: 30px;
+}
+.card .info .temp{font-size: 50px;}
+.footer{
+    background: rgba(53, 53, 53, 0.47);
+    backdrop-filter: blur(62px);
+    text-align: center;
+    padding: 30px;
+    line-height: 3em;
+    font-size: 15px;
+}
+.footer .icons a{
+    margin: 10px 20px;
+}
+
