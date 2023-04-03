@@ -9,6 +9,7 @@ const form = document.getElementById("form");
 form.addEventListener("click", async function (e) {
     e.preventDefault();
     const searchfield = document.getElementById("search-bar").value;
+    console.log(searchfield)
     const response = await fetch(apiUrl + searchfield + `&appid=${apiKey}`);
     const data = await response.json();
     const cname = document.getElementById("cname");
