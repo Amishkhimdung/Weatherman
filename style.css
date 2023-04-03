@@ -23,7 +23,7 @@ body {
 .weather-box h1 {
     text-align: center;
     font-size: 48px;
-    padding-bottom: 40px;
+    padding: 20px;
 }
 
 .search {
@@ -61,7 +61,12 @@ input {
 }
 .card .place{
     padding: 20px;
+    padding-bottom: 30px;
     justify-content: space-between;
+}
+.time{
+    font-size: 20px;
+    line-height: 5px;
 }
 .info{
     display: block;
