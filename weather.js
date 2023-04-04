@@ -5,6 +5,7 @@ document.getElementById("time").textContent = datetime;
 const apiKey = "6a675a69d5cb56ad2994d1356bb0dbe5";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 const form = document.getElementById("form");
+const icon = document.getElementById("icon");
 
 form.addEventListener("click", async function (e) {
     e.preventDefault();
@@ -20,10 +21,25 @@ form.addEventListener("click", async function (e) {
     text.innerHTML = data.weather[0].description;
     console.log(data.weather[0].description);
     const windspeed = document.getElementById("wind");
-    windspeed.innerHTML = data.wind.speed;
+    windspeed.innerHTML = data.wind.speed + "km/h";
     const humid = document.getElementById("humid");
     humid.innerHTML = data.main.humidity;
     const pressure = document.getElementById("press");
     pressure.innerHTML = data.main.pressure;
-
+    
+    if(data.weather[0].main == "Clouds"){
+        icon.src = "cloudy.png";
+    }
+    else if(data.weather[0].main == "Clear"){
+        icon.src = "clear.png";
+    }
+    else if(data.weather[0].main == "Rain"){
+        icon.src = "rain.png";
+    }
+    else if(data.weather[0].main == "Drizzle"){
+        icon.src = "drizzle.png";
+    }
+    else if(data.weather[0].main == "Mist"){
+        icon.src = "mist.png";
+    }
 });
