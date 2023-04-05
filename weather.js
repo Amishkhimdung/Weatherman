@@ -12,34 +12,38 @@ form.addEventListener("click", async function (e) {
     const searchfield = document.getElementById("search-bar").value;
     console.log(searchfield)
     const response = await fetch(apiUrl + searchfield + `&appid=${apiKey}`);
-    const data = await response.json();
-    const cname = document.getElementById("cname");
-    cname.innerHTML = data.name;
-    const temp = document.getElementById("temp");
-    temp.innerHTML = Math.round(data.main.temp)+"°C";
-    const text = document.getElementById("condition");
-    text.innerHTML = data.weather[0].description;
-    console.log(data.weather[0].description);
-    const windspeed = document.getElementById("wind");
-    windspeed.innerHTML = data.wind.speed + "km/h";
-    const humid = document.getElementById("humid");
-    humid.innerHTML = data.main.humidity;
-    const pressure = document.getElementById("press");
-    pressure.innerHTML = data.main.pressure;
-    
-    if(data.weather[0].main == "Clouds"){
-        icon.src = "cloudy.png";
+
+    if (response.status == 404) {
+        document.getElementById("error").style.display = "block";
+        document.getElementById("card").style.display = "none";
+    } else {
+        const data = await response.json();
+        const cname = document.getElementById("cname");
+        cname.innerHTML = data.name;
+        const temp = document.getElementById("temp");
+        temp.innerHTML = Math.round(data.main.temp) + "°C";
+        const text = document.getElementById("condition");
+        text.innerHTML = data.weather[0].description;
+        console.log(data.weather[0].description);
+        const windspeed = document.getElementById("wind");
+        windspeed.innerHTML = data.wind.speed + "km/h";
+        const humid = document.getElementById("humid");
+        humid.innerHTML = data.main.humidity;
+        const pressure = document.getElementById("press");
+        pressure.innerHTML = data.main.pressure;
+
+        if (data.weather[0].main == "Clouds") {
+            icon.src = "cloudy.png";
+        } else if (data.weather[0].main == "Clear") {
+            icon.src = "clear.png";
+        } else if (data.weather[0].main == "Rain") {
+            icon.src = "rain.png";
+        } else if (data.weather[0].main == "Drizzle") {
+            icon.src = "drizzle.png";
+        } else if (data.weather[0].main == "Mist") {
+            icon.src = "mist.png";
+        }
     }
-    else if(data.weather[0].main == "Clear"){
-        icon.src = "clear.png";
-    }
-    else if(data.weather[0].main == "Rain"){
-        icon.src = "rain.png";
-    }
-    else if(data.weather[0].main == "Drizzle"){
-        icon.src = "drizzle.png";
-    }
-    else if(data.weather[0].main == "Mist"){
-        icon.src = "mist.png";
-    }
+
+
 });
