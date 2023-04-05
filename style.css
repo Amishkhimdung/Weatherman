@@ -12,7 +12,7 @@ body {
 }
 
 .weather-box {
-    margin: 10em 40em;
+    margin: 10em 25em;
     padding: 40px 50px;
     border: 8px solid transparent;
     border-radius: 10px;
@@ -39,7 +39,7 @@ input {
     outline: 0;
     cursor: pointer;
     color: black;
-
+    text-align: center;
 }
 
 .search button {
@@ -56,25 +56,31 @@ input {
     height: 50px;
     width: 50px;
 }
+.error{
+    text-align: center;
+    margin-top: 10px;
+    display: none;
+}
 .card{
     text-align: center;
 }
 .card .place{
     padding: 20px;
     padding-bottom: 30px;
-    justify-content: space-between;
+    display: block;
+    text-align: center;
 }
 .time{
     font-size: 20px;
     line-height: 5px;
 }
 .info{
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 .card .info p{
     font-size: 30px;
 }
-.card .info .temp{font-size: 50px;}
 .footer{
     background: rgba(53, 53, 53, 0.47);
     backdrop-filter: blur(62px);
