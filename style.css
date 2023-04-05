@@ -74,7 +74,14 @@ input {
     font-size: 20px;
     line-height: 5px;
 }
+.info div{
+    display: inline-flex;
+}
+.info div img{
+    margin: 10px 20px;
+}
 .info{
+    padding-left: 50px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -130,6 +137,13 @@ input {
     .search button img {
         height: 30px;
         width: 30px;
+    }
+    .info div p, .info div h3{
+        font-size: 15px;
+    }
+    .info div img{
+        height: 50px;
+        width: 50px;
     }
     .footer{
         font-size: 8px;
